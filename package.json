@@ -1,0 +1,56 @@
+{
+  "name": "some-spider-smarter-readmore",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "namespace": [
+    "Jorbin",
+    "Plugin"
+  ],
+  "author": "Aaron Jorbin",
+  "license": "GPL-2.0+",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.8.0",
+    "eslint-config-wordpress": "^2.0.0",
+    "eslint-plugin-jest": "^21.2.0",
+    "jest": "^21.2.1",
+    "jest-environment-jsdom-latest": "^20.0.4",
+    "jquery": "^3.2.1",
+    "webpack": "^3.6.0"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "scripts": {
+    "build": "yarn run lint &&  node_modules/.bin/webpack --config config/webpack.config.js --env prod && node ./config/versioning.js",
+    "dev": "node_modules/.bin/webpack --config config/webpack.config.js --watch --env dev ",
+    "lint": "eslint .",
+    "test": "jest --watchAll"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.js?(x)",
+      "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
+    ],
+    "testEnvironment": "jsdom-latest",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest"
+    }
+  },
+  "dependencies": {
+    "promise": "^8.0.1"
+  }
+}

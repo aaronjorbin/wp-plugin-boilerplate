@@ -1,0 +1,15 @@
+{
+	"root": true,
+	"parser": "babel-eslint",
+	"extends": [
+		"wordpress"
+	],
+	"env": {
+		"browser": false,
+		"es6": true
+	},
+	"globals": {
+		"window": true,
+		"document": true
+	}
+}
